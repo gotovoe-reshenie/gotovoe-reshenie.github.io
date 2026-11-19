@@ -11,10 +11,16 @@
 body{margin:0;font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%}
 .wrap{max-width:720px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px))}
 header{border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;height:56px}
+header .wrap{display:flex;align-items:center;height:56px;max-width:980px}
 .brand{font-weight:700;font-size:16px}
 .brand::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--accent);margin-right:8px;vertical-align:1px}
-.hero{padding:44px 0 40px}
+.hero{padding:36px 0 44px;background:linear-gradient(180deg,var(--accent-soft),#fff 88%)}
+.hero .wrap{max-width:980px}
+.hero-grid{display:grid;gap:18px;align-items:center}
+.hero-grid>div{min-width:0}
+.hero-art{order:-1;max-width:220px}
+.hero-art svg{width:100%;height:auto;display:block}
+@media (min-width:760px){.hero-grid{grid-template-columns:minmax(0,1fr) 330px;gap:36px}.hero-art{order:0;max-width:none}.inside{grid-template-columns:1fr 1fr;column-gap:28px}}
 .eyebrow{font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin:0}
 h1{font-size:clamp(30px,6.4vw,44px);line-height:1.12;margin:12px 0 16px;text-wrap:balance;letter-spacing:-.01em}
 .sub{font-size:19px;color:var(--muted);margin:0 0 28px;max-width:60ch}
@@ -48,7 +54,7 @@ footer a{color:inherit}
 .sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .2s}
 .sticky.on{transform:none}
 .sticky .price{font-size:22px}
-.sticky .btn{min-height:48px;padding:12px 20px;font-size:16px}
+.sticky .btn{min-height:50px;padding:12px 20px;font-size:17px;width:100%}
 @media (min-width:760px){.sticky{display:none}footer{padding-bottom:40px}}
 @media (prefers-reduced-motion:reduce){.sticky{transition:none}}
 dialog{border:0;border-radius:18px;padding:26px;max-width:440px;width:calc(100% - 32px);color:var(--ink)}
@@ -64,22 +70,24 @@ dialog .btn{width:100%}
 <body>
 <header><div class="wrap"><div class="brand">Методкопилка воспитателя</div></div></header>
 <main>
-<div class="hero"><div class="wrap">
+<div class="hero"><div class="wrap"><div class="hero-grid"><div>
 <p class="eyebrow">Для воспитателей детского сада</p>
 <h1>Конспекты занятий на каждый месяц — сразу под вашу группу</h1>
 <p class="sub">Каждый месяц 20 конспектов по ФОП ДО, сценарий праздника и материалы для печати. Не нужно искать по сайтам и переделывать под возраст.</p>
-<div class="buy" id="herobuy"><div class="price">490 ₽<small>в месяц</small></div><button class="btn js-buy" type="button">Оформить за 490 ₽</button></div>
-<p class="note">Отменить можно в любой момент.</p>
+<div class="buy" id="herobuy"><button class="btn js-buy" type="button">Оформить за 490 ₽ в месяц</button></div>
+<p class="note">Отменить подписку можно в любой момент.</p>
 
-</div></div>
+</div><div class="hero-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img" aria-hidden="true"><circle cx="185" cy="150" r="128" fill="#fbede4"/><line x1="292" y1="70" x2="318" y2="70" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/><line x1="292" y1="70" x2="266" y2="70" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/><line x1="292" y1="70" x2="305.0" y2="92.62" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/><line x1="292" y1="70" x2="279.0" y2="47.379999999999995" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/><line x1="292" y1="70" x2="305.0" y2="47.379999999999995" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/><line x1="292" y1="70" x2="279.0" y2="92.62" stroke="#2a9d8f" stroke-width="5" stroke-linecap="round"/><g transform="rotate(-6 127 191)"><rect x="92" y="156" width="70" height="70" rx="10" fill="#c2581f"/><text x="127" y="204" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="700" fill="#fff">А</text></g><g transform="rotate(5 205 195)"><rect x="170" y="160" width="70" height="70" rx="10" fill="#f2c14e"/><text x="205" y="208" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="700" fill="#fff">Б</text></g><g transform="rotate(-3 165 119)"><rect x="130" y="84" width="70" height="70" rx="10" fill="#2a9d8f"/><text x="165" y="132" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="700" fill="#fff">В</text></g>
+<g transform="rotate(-38 270 220)"><rect x="232" y="212" width="90" height="16" rx="4" fill="#1b2220"/><rect x="232" y="212" width="16" height="16" rx="4" fill="#e66"/><path d="M322 212l18 8-18 8z" fill="#e9d9b4"/></g>
+<circle cx="70" cy="80" r="8" fill="#f2c14e"/><circle cx="96" cy="60" r="5" fill="#c2581f" opacity=".5"/></svg></div></div></div></div>
 <section><div class="wrap"><h2>Знакомо?</h2><ul class="pain"><li>Вечерами ищете конспекты по разным сайтам.</li><li>Найденное не подходит по возрасту группы или теме недели.</li><li>Сценарий праздника нужен срочно, а готового нет.</li></ul></div></section>
 <section><div class="wrap"><h2>Что вы получаете</h2><ul class="inside"><li>20 конспектов в месяц по темам недели</li><li>Варианты для младшей, средней, старшей и подготовительной группы</li><li>Сценарий праздника месяца с ролями и музыкой</li><li>Карточки, раскраски и игры для печати</li><li>Всё в Word: можно поправить под себя</li></ul></div></section>
 <section><div class="wrap"><h2>Как это работает</h2><ol class="steps"><li>Выбираете возраст группы</li><li>В начале месяца получаете конспекты и материалы</li><li>Распечатываете и проводите занятия</li></ol></div></section>
-<section><div class="wrap"><div class="offer"><h2>Методкопилка на месяц</h2><p>Отменить можно в любой момент.</p><div class="buy"><div class="price">490 ₽<small>в месяц</small></div><button class="btn js-buy" type="button">Оформить за 490 ₽</button></div></div></div></section>
+<section><div class="wrap"><div class="offer"><h2>Методкопилка на месяц</h2><p>Отменить подписку можно в любой момент.</p><div class="buy"><button class="btn js-buy" type="button">Оформить за 490 ₽ в месяц</button></div></div></div></section>
 <section><div class="wrap"><h2>Вопросы</h2><details><summary>Конспекты соответствуют ФОП ДО?</summary><p>Да. Темы и задачи занятий — по федеральной образовательной программе дошкольного образования.</p></details><details><summary>Можно сменить группу?</summary><p>Да, в любой месяц.</p></details><details><summary>Как отменить подписку?</summary><p>В личном кабинете, в один клик. За следующий месяц деньги не спишутся.</p></details></div></section>
 </main>
 <footer><div class="wrap">Сайт использует cookie и Яндекс Метрику, чтобы считать посещения и нажатия. <a href="../politika/">Политика обработки данных</a></div></footer>
-<div class="sticky" id="sticky"><div class="price">490 ₽<small>в месяц</small></div><button class="btn js-buy" type="button">Оформить</button></div>
+<div class="sticky" id="sticky"><button class="btn js-buy" type="button">Оформить за 490 ₽ в месяц</button></div>
 <dialog id="door" aria-labelledby="door-t">
 <h3 id="door-t">Подписка ещё готовится к запуску</h3>
 <p>Сейчас мы проверяем, нужен ли такой продукт, и пока не принимаем оплату. Ваше нажатие уже помогло — спасибо.</p>
